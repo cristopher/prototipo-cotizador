@@ -1,6 +1,6 @@
-import { Propiedad } from './types';
-// Fixed: VALOR_UF is exported from constants.ts, not types.ts
-import { VALOR_UF } from './constants';
+
+import { Propiedad } from './types.ts';
+import { VALOR_UF } from './constants.ts';
 
 export const formatUF = (value: number) => {
   return value.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, '.');

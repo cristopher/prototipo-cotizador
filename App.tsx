@@ -4,9 +4,9 @@ import {
   Download, Plus, Minus, X, Building2, MapPin, Bed, Bath, 
   Maximize, Phone, Globe, ChevronRight, Calculator, Home, ArrowLeft
 } from 'lucide-react';
-import { PROPIEDADES_EJEMPLO, VALOR_UF } from './constants';
-import { Propiedad, ItemCotizacion, DatosCliente, Totales, SimulacionCredito } from './types';
-import { formatUF, formatCLP, calcularPrecioVenta } from './utils';
+import { PROPIEDADES_EJEMPLO, VALOR_UF } from './constants.ts';
+import { Propiedad, ItemCotizacion, DatosCliente, Totales, SimulacionCredito } from './types.ts';
+import { formatUF, formatCLP, calcularPrecioVenta } from './utils.ts';
 
 // Global declaration for jsPDF from CDN
 declare global {
@@ -276,7 +276,6 @@ const App: React.FC = () => {
       <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-8">
         {vistaActual === 'catalogo' ? (
           <div className="space-y-12 animate-in fade-in duration-500">
-            {/* Categorias - Se removió el Hero Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               {['economica', 'exclusiva'].map((cat) => (
                 <section key={cat}>
@@ -300,7 +299,6 @@ const App: React.FC = () => {
           </div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 animate-in slide-in-from-right duration-500">
-            {/* Detalle Cotización */}
             <div className="lg:col-span-8 space-y-8">
               <div className="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden">
                 <div className="p-8 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
@@ -386,7 +384,6 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              {/* Simulador Hipotecario */}
               {propiedadesSeleccionadas.length > 0 && (
                 <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 space-y-10">
                   <h3 className="text-2xl font-black text-slate-900 flex items-center gap-3">
@@ -465,7 +462,6 @@ const App: React.FC = () => {
               )}
             </div>
 
-            {/* Sidebar Resumen / Cliente */}
             <div className="lg:col-span-4 space-y-8">
               <div className="bg-white rounded-3xl shadow-xl border border-slate-100 p-8 sticky top-32">
                 <h3 className="text-2xl font-black text-slate-900 mb-8 border-b border-slate-100 pb-4">Resumen Inversión</h3>
@@ -534,7 +530,6 @@ const App: React.FC = () => {
         )}
       </main>
 
-      {/* Footer */}
       <footer className="bg-slate-950 text-white pt-20 pb-10 border-t border-slate-900">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
